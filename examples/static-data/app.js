@@ -27,6 +27,7 @@ let App = React.createClass({
               key={item.abbr}
             >{item.name}</div>
           )}
+          style={{display: 'block'}}
         />
       </div>
     )

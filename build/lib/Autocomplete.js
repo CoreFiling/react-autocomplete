@@ -19,7 +19,8 @@ var Autocomplete = React.createClass({
     renderItem: React.PropTypes.func.isRequired,
     menuStyle: React.PropTypes.object,
     inputProps: React.PropTypes.object,
-    labelText: React.PropTypes.string
+    labelText: React.PropTypes.string,
+    style: React.PropTypes.object
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -42,11 +43,14 @@ var Autocomplete = React.createClass({
         fontSize: '90%',
         position: 'fixed',
         overflow: 'auto',
-        maxHeight: '50%' }
+        maxHeight: '50%' },
+      // TODO: don't cheat, let it flow to the bottom
+      style: {
+        display: 'inline-block'
+      }
     };
   },
 
-  // TODO: don't cheat, let it flow to the bottom
   getInitialState: function getInitialState() {
     return {
       value: this.props.initialValue || '',
@@ -306,7 +310,7 @@ var Autocomplete = React.createClass({
     }
     return React.createElement(
       'div',
-      { style: { display: 'inline-block' } },
+      { style: this.props.style, className: this.props.className },
       React.createElement(
         'label',
         { htmlFor: this.id, ref: 'label' },

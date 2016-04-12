@@ -1,21 +1,22 @@
 {
   "name": "react-autocomplete",
-  "version": "0.2.1",
+  "version": "0.2.2-cfl.1",
   "description": "Accessible, extensible, Autocomplete for React.js",
   "main": "./build/lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rackt/react-autocomplete.git"
+    "url": "https://github.com/CoreFiling/react-autocomplete.git"
   },
-  "homepage": "https://github.com/rackt/react-autocomplete",
-  "bugs": "https://github.com/rackt/react-autocomplete/issues",
+  "homepage": "https://github.com/CoreFiling/react-autocomplete",
+  "bugs": "https://github.com/CoreFiling/react-autocomplete/issues",
   "directories": {
     "example": "examples"
   },
   "scripts": {
     "test": "BABEL_ENV=test mocha --require './lib/__tests__/.setup.js' --compilers js:babel-register './lib/__tests__/Autocomplete-test.js'",
     "coverage": "BABEL_ENV=test node_modules/.bin/babel-node node_modules/isparta/bin/isparta cover --report lcov node_modules/mocha/bin/_mocha -- --reporter dot --require './lib/__tests__/.setup.js' './lib/__tests__/Autocomplete-test.js'",
-    "start": "rackt server"
+    "start": "rackt server",
+    "build": "rackt build"
   },
   "authors": [
     "Ryan Florence <rpflorence@gmail.com>"
